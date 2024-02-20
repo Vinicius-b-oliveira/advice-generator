@@ -46,14 +46,15 @@ Esse projeto me proporcionou um avanço no entendimento do funcionamento das API
 
 Segue abaixo um trecho de código com os conhecimentos relatados acima: 
 ```javascript
-async function getAdvice() {
-    const response = await fetch("https://api.adviceslip.com/advice");
-    const adviceContent = await response.json();
-    const adviceId = `Advice #${adviceContent.slip.id}`;
-    const adviceText = `"${adviceContent.slip.advice}"`;
+async function gerarConselho() {
+    const url = "https://api.adviceslip.com/advice"
+    const resposta = await fetch(url)
+    const json = await resposta.json()
+    const id = `Advice # ${json.slip.id}`
+    const text = json.slip.advice
 
-    adviceNumber.innerHTML = adviceId;
-    adviceDescription.innerHTML = adviceText;
+    adviceId.innerHTML = id
+    advice.innerHTML = text
 }
 ```
 

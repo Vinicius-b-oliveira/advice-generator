@@ -13,6 +13,6 @@ async function gerarConselho() {
     advice.innerHTML = text
 }
 
-adviceButton.addEventListener("click", () => {
-    gerarConselho()
-})
+adviceButton.addEventListener("click", gerarConselho)
+
+gerarConselho()
